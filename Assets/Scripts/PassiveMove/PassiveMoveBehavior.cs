@@ -5,7 +5,7 @@ namespace DefaultNamespace
 {
     public class PassiveMoveBehavior : CustomUpdatableBehavior, IPassiveMover
     {
-        [SerializeField] protected float _speed;
+        [SerializeField] private float _speed;
         public float Speed
         {
             get { return _speed;}
@@ -16,7 +16,7 @@ namespace DefaultNamespace
             }
         }
         
-        [SerializeField] protected Vector3 _direction;
+        [SerializeField] private Vector3 _direction;
 
         public Vector3 Direction
         {

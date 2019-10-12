@@ -1,43 +1,23 @@
 ﻿using DefaultNamespace;
 using UnityEngine;
 
-public interface IBall
-{
-//    GameObject Hit
-//    void ChangeDirection
-}
-
 public class Ball : PassiveMoveBehavior
 {
-    private Vector2 _reflection;
     private RaycastHit2D _hitInfo;
     private Vector3 _collisionPoint;
     
     private float _size;
-    private Vector3 _deltaPosition; 
-        
+    private Vector3 _sizeCorrectorComponent;
+    
+    private Vector3[] _collisionPoints = new Vector3[3];
+    
     public override void Init()
     {
-         _size = GetComponent<SpriteRenderer>().bounds.size.x / 2;
-         _deltaPosition = _size * _direction.normalized;
-    }
-
-    private bool CalculateCollision()
-    {
-        var ray = new Ray2D (_myTransform.position, _direction );
-        Debug.DrawRay( _myTransform.position,  _direction, Color.magenta, _currentSpeed.magnitude  * Time.deltaTime);
-        
-        _hitInfo = Physics2D.Raycast(_myTransform.position, _direction, _size + _currentSpeed.magnitude * Time.deltaTime);
-        
-        if (_hitInfo.collider !=null)
-        {
-            _reflection = ReflectedDirection( _hitInfo.normal);
-
-            _collisionPoint = _hitInfo.point;
-            return true;
-        }
-        
-        return false;
+        _size = GetComponent<SpriteRenderer>().bounds.size.x / 2;
+        _sizeCorrectorComponent = _size * Direction.normalized;
+         
+         _collisionPoints[0] = Vector3.zero;
+         UpdateCollisionPoints();
     }
 
     public override void Move()
@@ -45,18 +25,41 @@ public class Ball : PassiveMoveBehavior
         var collision = CalculateCollision() ;
         if( collision)
         {
-            _myTransform.position = _collisionPoint - _deltaPosition;
-            Direction = _reflection;
-            _deltaPosition = _size * _direction.normalized;
+            _myTransform.position = _collisionPoint - _sizeCorrectorComponent;
+            ChangeDirection(_hitInfo.normal);
         }
         else
             base.Move();
-      
-
     }
 
-    Vector2 ReflectedDirection( Vector2 normal)
+    private bool CalculateCollision()
     {
-        return (Vector2)_direction - 2 * Vector2.Dot(_direction, normal) * normal ;
+        for (int i = 0; i < _collisionPoints.Length; i++)
+        {
+            _hitInfo = Physics2D.Raycast(_myTransform.position + _collisionPoints[i], Direction, _size + _currentSpeed.magnitude * Time.deltaTime);
+
+            if (_hitInfo.collider !=null)
+            {
+                _collisionPoint = _hitInfo.point - (Vector2)_collisionPoints[i];;
+                return true;
+            } 
+        }
+        return false;
+    }
+    
+    private void ChangeDirection( Vector2 normal)
+    {
+        var lastDirection = Direction;
+        Direction = (Vector2)lastDirection - 2 * Vector2.Dot(lastDirection, normal) * normal ; // reflection last direction 
+        
+        _sizeCorrectorComponent = _size * Direction.normalized;
+        UpdateCollisionPoints();
+    }
+
+    private void UpdateCollisionPoints()
+    {
+       var normal = Vector3.Cross(Direction, new Vector3(0,0,1) ).normalized;
+       _collisionPoints[1] = normal* _size;
+       _collisionPoints[2] = normal * -_size;
     }
 }
