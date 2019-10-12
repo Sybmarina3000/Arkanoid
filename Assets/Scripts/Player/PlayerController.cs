@@ -4,7 +4,7 @@ using UnityEngine.Experimental.PlayerLoop;
 
 namespace DefaultNamespace
 {
-    public class PlayerController : MonoBehaviour
+    public class PlayerController : CustomUpdatableBehavior, IUpdatable
     {
         private IPlayer _player;
 
@@ -13,7 +13,7 @@ namespace DefaultNamespace
             _player = RealizationBox.Instance.Player;
         }
 
-        private void Update()
+        void IUpdatable.UpdateMe()
         {
             if (Input.GetKey(KeyCode.LeftArrow))
             {

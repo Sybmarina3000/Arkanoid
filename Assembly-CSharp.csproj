@@ -68,7 +68,12 @@
   <ItemGroup>
     <Compile Include="Assets\Helper\Patterns\ObjectPool.cs" />
     <Compile Include="Assets\Helper\Patterns\Singleton.cs" />
-    <Compile Include="Assets\Scripts\IUpdatable.cs" />
+    <Compile Include="Assets\Scripts\CustomUpdate\CustomUpdatableBehavior.cs" />
+    <Compile Include="Assets\Scripts\CustomUpdate\CustomUpdater.cs" />
+    <Compile Include="Assets\Scripts\CustomUpdate\IUpdatable.cs" />
+    <Compile Include="Assets\Scripts\GameEntity\Ball.cs" />
+    <Compile Include="Assets\Scripts\PassiveMove\AbstractPassiveMoveBehavior.cs" />
+    <Compile Include="Assets\Scripts\PassiveMove\IPassiveMover.cs" />
     <Compile Include="Assets\Scripts\Player\IPlayer.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Player\Racket.cs" />

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
     <e p="D:\Users\sybma\.Rider2019.2\system\extResources" t="IncludeRecursive" />
@@ -14,7 +14,18 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
-          <e p="IUpdatable.cs" t="Include" />
+          <e p="CustomUpdate" t="Include">
+            <e p="CustomUpdatableBehavior.cs" t="Include" />
+            <e p="CustomUpdater.cs" t="Include" />
+            <e p="IUpdatable.cs" t="Include" />
+          </e>
+          <e p="GameEntity" t="Include">
+            <e p="Ball.cs" t="Include" />
+          </e>
+          <e p="PassiveMove" t="Include">
+            <e p="AbstractPassiveMoveBehavior.cs" t="Include" />
+            <e p="IPassiveMover.cs" t="Include" />
+          </e>
           <e p="Player" t="Include">
             <e p="IPlayer.cs" t="Include" />
             <e p="PlayerController.cs" t="Include" />
