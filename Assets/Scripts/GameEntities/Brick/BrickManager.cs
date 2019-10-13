@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using GameEntities.Bonus;
 using GameEntities.IBehaviour;
 using UnityEngine;
@@ -49,12 +48,13 @@ namespace GameEntities.Brick
             _currentCount--;
             if (_currentCount == 0)
                FullDestroy();
+            else if(_GenerateBonus)
+               _bonusManager.GenerateBonus(brick.MyPosition);
          }
          else
             VisualUpdateObj( brick);
          
-         if(_GenerateBonus)
-            _bonusManager.GenerateBonus(brick.MyPosition);
+        
       }
 
       public void VisualUpdateObj(IDestroyable destroyObj)

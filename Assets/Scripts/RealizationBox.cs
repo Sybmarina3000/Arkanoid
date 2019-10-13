@@ -4,6 +4,7 @@ using GameEntities.Brick;
 using GameEntities.IBehaviour;
 using GameEntities.Player;
 using Helper.Patterns;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -21,5 +22,5 @@ public class RealizationBox : Singleton<RealizationBox>
     public IBrush BrickBrush => _BrickBrush;
     public IGameLogic GameLogic => _GameLogic;
     public IBallManager BallManager => _BallManager;
-    public IBonusManager BonusManager => _BonusManager;
+    [CanBeNull] public IBonusManager BonusManager => _BonusManager;
 }

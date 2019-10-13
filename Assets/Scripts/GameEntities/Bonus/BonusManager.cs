@@ -18,7 +18,7 @@ namespace GameEntities.Bonus
         [SerializeField] private float _speedMax, _speedMin;
 
         // TODO add enum enumerator in custom editor. For set mass.count == Enum.GetValues(typeof(BonusType)).Length
-        [SerializeField] private Color[] _BonusColors;
+        [HideInInspector] [SerializeField] private Color[] _BonusColors;
         [SerializeField] [Range(0.0f, 1.0f)] private float _Probability;
     
         private int _countBonusType;
@@ -46,7 +46,7 @@ namespace GameEntities.Bonus
         
             var point = Pool.CreateObject(position);
 
-            int randomType = 3;//Random.Range(0, _countBonusType);
+            int randomType = Random.Range(0, _countBonusType);
             point.SetType( (BonusType)randomType, _BonusColors[randomType]  );
         
             point.Direction = Vector3.down;

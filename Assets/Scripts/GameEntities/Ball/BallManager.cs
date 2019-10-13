@@ -81,7 +81,6 @@ namespace GameEntities.Ball
             {
                 if ( ball.Speed + delta > _minSpeed)
                     ball.Speed += delta;
-                Debug.Log("new speed " + ball.Speed);
             }
         }
     }
