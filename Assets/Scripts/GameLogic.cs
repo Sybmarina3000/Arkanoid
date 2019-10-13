@@ -60,9 +60,9 @@ public class GameLogic : MonoBehaviour, IGameLogic
 
     public void Reload()
     {
+        _player.Reload();
         _ballManager.CreateNewBall();
         _brickmanager.Reload();
-        _player.Reload();
     }
 
     public void WinGame()

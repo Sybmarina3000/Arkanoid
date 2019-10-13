@@ -79,6 +79,8 @@ namespace GameEntities.Ball
         {
             foreach (var ball in Balls)
             {
+                if( ball.MyTransform.parent == _player.MyTransform)
+                    continue;
                 if ( ball.Speed + delta > _minSpeed)
                     ball.Speed += delta;
             }

@@ -62,10 +62,22 @@ namespace GameEntities.Player
 
         public void ChangeSize( float delta)
         {
+            Transform[] childs = new Transform[MyTransform.childCount];
+            for (var i = 0; i < childs.Length; i++)
+            {
+                childs[i] = _myTransform.GetChild(i);
+                childs[i].parent = null;
+            }
+
             _myTransform.localScale += new Vector3(delta, 0,0);
             _scale += delta / 2;
 
             UpdateLimits();
+            
+            for (var i = 0; i < childs.Length; i++)
+            {
+                childs[i].parent = _myTransform;
+            }
         }
 
         public bool OnPlayer(float xPosition)
