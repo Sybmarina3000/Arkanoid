@@ -27,6 +27,7 @@ public class GameLogic : MonoBehaviour, IGameLogic
 
     private IBallManager _ballManager;
     private IManagerForDestroyable _brickmanager;
+    private IPlayer _player;
 
     [SerializeField] private UnityEvent _EndGame;
     [SerializeField] private UnityEvent _WinGame;
@@ -35,6 +36,7 @@ public class GameLogic : MonoBehaviour, IGameLogic
     {
         _ballManager = RealizationBox.Instance.BallManager;
         _brickmanager = RealizationBox.Instance.ManagerForDestroyable;
+        _player = RealizationBox.Instance.Player;
 
     }
 
@@ -60,6 +62,7 @@ public class GameLogic : MonoBehaviour, IGameLogic
     {
         _ballManager.CreateNewBall();
         _brickmanager.Reload();
+        _player.Reload();
     }
 
     public void WinGame()

@@ -15,7 +15,7 @@ namespace GameEntities.Ball
         void CreateNewBall();
         void RunBall();
         void FinishGame();
-        void ChangeBallsSpeed(int delta);
+        void ChangeBallsSpeed(float delta);
     }
     
     public class BallManager : MonoBehaviour, IBallManager
@@ -26,7 +26,7 @@ namespace GameEntities.Ball
         private IPlayer _player;
         private IGameLogic _gameLogic;
         [SerializeField] private float startSpeed;
-
+        [SerializeField] private float _minSpeed;
         private void Start()
         {
             Balls = new List<PassiveMoveBehavior>();
@@ -75,11 +75,13 @@ namespace GameEntities.Ball
             }
         }
 
-        public void ChangeBallsSpeed(int delta)
+        public void ChangeBallsSpeed(float delta)
         {
             foreach (var ball in Balls)
             {
-                ball.Speed += delta;
+                if ( ball.Speed + delta > _minSpeed)
+                    ball.Speed += delta;
+                Debug.Log("new speed " + ball.Speed);
             }
         }
     }

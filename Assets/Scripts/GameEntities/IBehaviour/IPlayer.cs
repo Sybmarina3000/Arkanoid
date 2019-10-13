@@ -13,5 +13,7 @@ namespace GameEntities.IBehaviour
         void ChangeSize( float delta);
 
         bool OnPlayer( float xPosition);
+
+        void Reload();
     }
 }

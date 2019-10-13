@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using GameEntities.Bonus;
 using GameEntities.IBehaviour;
 using UnityEngine;
 

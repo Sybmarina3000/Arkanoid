@@ -1,4 +1,5 @@
 ﻿using GameEntities.Ball;
+using GameEntities.Bonus;
 using GameEntities.Brick;
 using GameEntities.IBehaviour;
 using GameEntities.Player;

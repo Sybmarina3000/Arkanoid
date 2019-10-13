@@ -28,12 +28,15 @@ namespace GameEntities.Player
         [SerializeField] private Transform _RightLimiter;
 
         private Transform _myTransform;
+        private Vector3 _startSize;
         private float _scale;
         
         private void Awake()
         {
             _myTransform = transform;
+            
             _scale = _myTransform.localScale.x / 2;
+            _startSize = _myTransform.localScale;
             
             UpdateLimits();
             UpdateDirectionVectors();
@@ -68,6 +71,13 @@ namespace GameEntities.Player
         public bool OnPlayer(float xPosition)
         {
             return transform.position.x - _scale <= xPosition && xPosition <= transform.position.x + _scale;
+        }
+
+        public void Reload()
+        {
+            _myTransform.localScale = _startSize;
+            _scale = _myTransform.localScale.x / 2;
+            UpdateLimits();
         }
 
 
