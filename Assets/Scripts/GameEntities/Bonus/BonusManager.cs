@@ -11,7 +11,7 @@ public interface IBonusManager
     void GenerateBonus( Vector3 position);
     void UseBonus(IBonus bonus);
 }
-public class BonusCreator : MonoBehaviour, IBonusManager
+public class BonusManager : MonoBehaviour, IBonusManager
 {
     [SerializeField] private BonusPool Pool;
 
@@ -33,7 +33,6 @@ public class BonusCreator : MonoBehaviour, IBonusManager
         GenerateBonus( pos.position);
     }
 
- 
     public void GenerateBonus( Vector3 position)
     {
         var point = Pool.CreateObject(position);
@@ -47,7 +46,11 @@ public class BonusCreator : MonoBehaviour, IBonusManager
 
     public void UseBonus(IBonus bonus)
     {
-        Debug.Log(" use bonus => " + bonus.BonusType);
+        if( _player.OnPlayer( bonus.UseCoordinat))
+            Debug.Log(" use bonus => " + bonus.BonusType);
+        else 
+            Debug.Log(" NOT USE bonus => " + bonus.BonusType);
         Pool.DestroyObject( (Bonus)bonus);
     }
+    
 }

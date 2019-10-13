@@ -13,10 +13,12 @@ public class RealizationBox : Singleton<RealizationBox>
     [SerializeField] private BrickBrush _BrickBrush;
     [SerializeField] private GameLogic _GameLogic;
     [SerializeField] private BallManager _BallManager;
+    [SerializeField] private BonusManager _Bonusmanager;
     
     public IPlayer Player => _Player;
     public IManagerForDestroyable ManagerForDestroyable => _BrickManager;
     public IBrush BrickBrush => _BrickBrush;
     public IGameLogic GameLogic => _GameLogic;
     public IBallManager BallManager => _BallManager;
+    public IBonusManager Bonusmanager => _Bonusmanager;
 }

@@ -65,6 +65,12 @@ namespace GameEntities.Player
             UpdateLimits();
         }
 
+        public bool OnPlayer(float xPosition)
+        {
+            return transform.position.x - _scale <= xPosition && xPosition <= transform.position.x + _scale;
+        }
+
+
         private void UpdateLimits()
         {
             _rightLimitPos = new Vector3( _RightLimiter.position.x - _scale, _myTransform.position.y, 0);

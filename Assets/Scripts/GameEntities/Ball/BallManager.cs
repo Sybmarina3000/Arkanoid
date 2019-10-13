@@ -15,6 +15,7 @@ namespace GameEntities.Ball
         void CreateNewBall();
         void RunBall();
         void FinishGame();
+        void ChangeBallsSpeed(int delta);
     }
     
     public class BallManager : MonoBehaviour, IBallManager
@@ -71,6 +72,14 @@ namespace GameEntities.Ball
             foreach (var item in Balls)
             {
                 item.Speed = 0;
+            }
+        }
+
+        public void ChangeBallsSpeed(int delta)
+        {
+            foreach (var ball in Balls)
+            {
+                ball.Speed += delta;
             }
         }
     }

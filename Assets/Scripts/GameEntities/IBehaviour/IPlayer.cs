@@ -11,5 +11,7 @@ namespace GameEntities.IBehaviour
         void MoveLeft();
 
         void ChangeSize( float delta);
+
+        bool OnPlayer( float xPosition);
     }
 }

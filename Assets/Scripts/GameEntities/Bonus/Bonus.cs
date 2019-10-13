@@ -1,5 +1,4 @@
-﻿using GameEntities.IBehaviour.PassiveMove;
-using UnityEngine;
+﻿using UnityEngine;
 
 public enum  BonusType
 {
@@ -10,6 +9,7 @@ public enum  BonusType
 
 public interface IBonus
 {
+    float UseCoordinat { get; }
     BonusType BonusType { get; }
     void Use();
     void SetType(BonusType type, Color color);
@@ -19,6 +19,8 @@ public interface IBonus
 public class Bonus : CollidePassiveMover, IBonus
 {
     // Start is called before the first frame update
+    public float UseCoordinat { get => _myTransform.position.x; }
+    
     public BonusType BonusType { get => _myType; }
     private BonusType _myType;
     
@@ -26,12 +28,21 @@ public class Bonus : CollidePassiveMover, IBonus
     private readonly string _floorTag = "Floor";
 
     private SpriteRenderer _spriteRenderer;
+    private IBonusManager _bonusManager;
+
+    private Transform _myTransform;
     public override void CustomAwake()
     {
+        _myTransform = transform;
         _size = GetComponent<SpriteRenderer>().bounds.size.x / 2;
         _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
+    private void Start()
+    {
+        _bonusManager = RealizationBox.Instance.Bonusmanager;
+    }
+    
     public override void Move()
     {
         CalculateCollision();
@@ -59,15 +70,15 @@ public class Bonus : CollidePassiveMover, IBonus
         }
     }
 
-
     public void Use()
-    {
-        
+    { 
+        _bonusManager.UseBonus(this);   
     }
 
     public void SetType(BonusType type, Color color)
     {
         _myType = type;
         _spriteRenderer.color = color;
+        
     }
 }
