@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace GameEntities.Ball
 {
-    public class Ball : PassiveMoveBehavior, IAttacking
+    public class Ball : CollidePassiveMover, IAttacking
     {
         // collision
         private RaycastHit2D _hitInfo;
@@ -51,7 +51,7 @@ namespace GameEntities.Ball
                 base.Move();
         }
 
-        private bool CalculateCollision()
+        protected override bool CalculateCollision()
         {
             for (int i = 0; i < _collisionPoints.Length; i++)
             {
@@ -89,7 +89,7 @@ namespace GameEntities.Ball
             _collisionPoints[2] = normal * -_size;
         }
 
-        private void AnalyzeCollisionByTag( GameObject obj)
+        protected override void AnalyzeCollisionByTag( GameObject obj)
         {
             if( obj.CompareTag( _attackTag))
             {

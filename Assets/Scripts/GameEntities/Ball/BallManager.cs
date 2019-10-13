@@ -4,6 +4,7 @@ using GameEntities.IBehaviour;
 using GameEntities.IBehaviour.PassiveMove;
 using Helper.Patterns;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 namespace GameEntities.Ball
@@ -18,7 +19,7 @@ namespace GameEntities.Ball
     
     public class BallManager : MonoBehaviour, IBallManager
     {
-        [SerializeField] private BallPool _ballPool;
+        [FormerlySerializedAs("_ballPool")] [SerializeField] private PassiveMoveObjPool passiveMoveObjPool;
         private List<PassiveMoveBehavior> Balls;
         
         private IPlayer _player;
@@ -36,7 +37,7 @@ namespace GameEntities.Ball
 
         public void DestroyBall(PassiveMoveBehavior ball)
         {
-            _ballPool.DestroyObject(ball);
+            passiveMoveObjPool.DestroyObject(ball);
             Balls.Remove(ball);
             if (Balls.Count == 0)
                 _gameLogic.AnalyzeGameEvent(GameEvents.DropBall);
@@ -44,7 +45,7 @@ namespace GameEntities.Ball
 
         public void CreateNewBall()
         {
-            var ball = _ballPool.CreateObject(Vector3.zero);
+            var ball = passiveMoveObjPool.CreateObject(Vector3.zero);
             
             ball.MyTransform.position = _player.MyTransform.position + new Vector3(0, 0.3f, 0);
             ball.MyTransform.parent = _player.MyTransform;

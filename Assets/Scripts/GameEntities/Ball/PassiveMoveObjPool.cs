@@ -3,7 +3,7 @@ using Helper.Patterns;
 
 namespace GameEntities.Ball
 {
-    public class BallPool : ObjectPool<PassiveMoveBehavior>
+    public class PassiveMoveObjPool : ObjectPool<PassiveMoveBehavior>
     {
     }
 }
