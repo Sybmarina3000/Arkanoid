@@ -12,9 +12,9 @@ namespace GameEntities.Ball
     {
         void DestroyBall( PassiveMoveBehavior ball);
         void CreateNewBall();
-
         void RunBall();
     }
+    
     public class BallManager : MonoBehaviour, IBallManager
     {
         [SerializeField] private BallPool _ballPool;
@@ -28,13 +28,17 @@ namespace GameEntities.Ball
         {
             Balls = new List<PassiveMoveBehavior>();
             _player = RealizationBox.Instance.Player;
+            _gameLogic = RealizationBox.Instance.GameLogic;
+            
+            CreateNewBall();
         }
 
         public void DestroyBall(PassiveMoveBehavior ball)
         {
             _ballPool.DestroyObject(ball);
             Balls.Remove(ball);
-         Invoke(   nameof( CreateNewBall), 2f);
+            if (Balls.Count == 0)
+                _gameLogic.AnalyzeGameEvent(GameEvents.DropBall);
         }
 
         public void CreateNewBall()

@@ -53,9 +53,6 @@ namespace GameEntities.Ball
 
         private bool CalculateCollision()
         {
-            Debug.DrawRay( _myTransform.position + _collisionPoints[0], Direction, Color.green);
-            Debug.DrawRay( _myTransform.position + _collisionPoints[1], Direction, Color.yellow);
-            Debug.DrawRay(_myTransform.position + _collisionPoints[2], Direction, Color.blue);
             for (int i = 0; i < _collisionPoints.Length; i++)
             {
                 _hitInfo = Physics2D.Raycast(_myTransform.position + _collisionPoints[i], Direction, _size + _currentSpeed.magnitude * Time.deltaTime);
@@ -101,7 +98,6 @@ namespace GameEntities.Ball
             }   
             if( obj.CompareTag( _floorTag))
             {
-                Debug.Log(" DESTROY BALL");
                 Speed = 0;
                 Direction = Vector3.zero;
                 

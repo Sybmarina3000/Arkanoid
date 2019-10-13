@@ -1530,7 +1530,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1860343282
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1745,6 +1745,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerController
       objectReference: {fileID: 0}
+    - target: {fileID: 4302275265482113637, guid: 0ddb95f6a90cce742b5a31a92761d177,
+        type: 3}
+      propertyPath: _LeftLimiter
+      value: 
+      objectReference: {fileID: 905567186}
+    - target: {fileID: 4302275265482113637, guid: 0ddb95f6a90cce742b5a31a92761d177,
+        type: 3}
+      propertyPath: _RightLimiter
+      value: 
+      objectReference: {fileID: 757083286}
     - target: {fileID: 4302275266280261651, guid: 0ddb95f6a90cce742b5a31a92761d177,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1800,15 +1810,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4302275265482113637, guid: 0ddb95f6a90cce742b5a31a92761d177,
-        type: 3}
-      propertyPath: _LeftLimiter
-      value: 
-      objectReference: {fileID: 905567186}
-    - target: {fileID: 4302275265482113637, guid: 0ddb95f6a90cce742b5a31a92761d177,
-        type: 3}
-      propertyPath: _RightLimiter
-      value: 
-      objectReference: {fileID: 757083286}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ddb95f6a90cce742b5a31a92761d177, type: 3}
