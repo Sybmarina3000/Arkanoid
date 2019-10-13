@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using GameEntities.Ball;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public enum GameEvents
@@ -24,6 +25,9 @@ public class GameLogic : MonoBehaviour, IGameLogic
     [SerializeField] private Scene _NextScene;
 
     private IBallManager _ballManager;
+
+    [SerializeField] private UnityEvent _EndGame;
+    [SerializeField] private UnityEvent _WinGame;
 
     private void Start()
     {
@@ -58,16 +62,17 @@ public class GameLogic : MonoBehaviour, IGameLogic
     public void WinGame()
     {
         Debug.Log("Win Game!!!");
-        
+        _WinGame.Invoke();
     }
 
     public void EndGame()
     {
-        throw new System.NotImplementedException();
+        Debug.Log("GAME OVER");
+        _EndGame.Invoke();
     }
 
     private void FinishAllGame()
     {
-        Debug.Log("Win Game!!!");
+        Debug.Log("Win ALL Game!!!");
     }
 }
