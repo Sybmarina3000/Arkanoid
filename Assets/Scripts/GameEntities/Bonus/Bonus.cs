@@ -40,7 +40,7 @@ public class Bonus : CollidePassiveMover, IBonus
 
     private void Start()
     {
-        _bonusManager = RealizationBox.Instance.Bonusmanager;
+        _bonusManager = RealizationBox.Instance.BonusManager;
     }
     
     public override void Move()

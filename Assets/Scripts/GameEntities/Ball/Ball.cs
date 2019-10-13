@@ -23,6 +23,7 @@ namespace GameEntities.Ball
         
         private IManagerForDestroyable _destroyManager;
         private IBallManager _ballManager;
+        private IPlayer _player;
         
         public override void CustomAwake()
         {
@@ -37,6 +38,7 @@ namespace GameEntities.Ball
         {
             _destroyManager =  RealizationBox.Instance.ManagerForDestroyable;
             _ballManager =  RealizationBox.Instance.BallManager;
+            _player = RealizationBox.Instance.Player;
         }
 
         public override void Move()
@@ -96,7 +98,7 @@ namespace GameEntities.Ball
                 Attack(_hitInfo.collider.gameObject);
                 return;
             }   
-            if( obj.CompareTag( _floorTag))
+            if( obj.CompareTag( _floorTag) && !_player.OnPlayer( _myTransform.position.x))
             {
                 Speed = 0;
                 Direction = Vector3.zero;
