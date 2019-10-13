@@ -7,16 +7,21 @@ namespace GameEntities.Brick
 {
    public class BrickManager : MonoBehaviour, IManagerForDestroyable
    {
+      [SerializeField] private bool _GenerateBonus;
+      
       private Dictionary<GameObject, IDestroyable> _bricks = new Dictionary<GameObject, IDestroyable>();
       private int _currentCount;
 
       private IBrush _brush;
       private IGameLogic _gameLogic;
+      private IBonusManager _bonusManager;
       
       private void Start()
       {
          _brush = RealizationBox.Instance.BrickBrush;
          _gameLogic =  RealizationBox.Instance.GameLogic;
+         if(_GenerateBonus)
+            _bonusManager =  RealizationBox.Instance.BonusManager;
          InitializationBricks();
       }
 
@@ -37,6 +42,7 @@ namespace GameEntities.Brick
       
          IDestroyable brick = _bricks[destroyObj];
          brick.Damage( damage);
+         
          if (brick.IsDestroy)
          {
             _currentCount--;
@@ -45,6 +51,9 @@ namespace GameEntities.Brick
          }
          else
             VisualUpdateObj( brick);
+         
+         if(_GenerateBonus)
+            _bonusManager.GenerateBonus(brick.MyPosition);
       }
 
       public void VisualUpdateObj(IDestroyable destroyObj)

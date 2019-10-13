@@ -14,11 +14,13 @@ public interface IBonusManager
 public class BonusManager : MonoBehaviour, IBonusManager
 {
     [SerializeField] private BonusPool Pool;
-
+    
     [SerializeField] private float _speedMax, _speedMin;
 
     // TODO add enum enumerator in custom editor. For set mass.count == Enum.GetValues(typeof(BonusType)).Length
     [SerializeField] private Color[] _BonusColors;
+    [SerializeField] [Range(0.0f, 1.0f)] private float _Probability;
+    
     private int _countBonusType;
 
     private IPlayer _player;
@@ -29,12 +31,13 @@ public class BonusManager : MonoBehaviour, IBonusManager
     {
         _player = RealizationBox.Instance.Player;
         _countBonusType = Enum.GetValues(typeof(BonusType)).Length;
-        
-        GenerateBonus( pos.position);
     }
-
+    
     public void GenerateBonus( Vector3 position)
     {
+        if (Random.Range(0.0f, 1.0f) > _Probability)
+            return;
+        
         var point = Pool.CreateObject(position);
 
         int randomType = Random.Range(0, _countBonusType);

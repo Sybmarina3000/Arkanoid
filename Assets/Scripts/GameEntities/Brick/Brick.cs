@@ -11,14 +11,18 @@ namespace GameEntities.Brick
             get { return gameObject; }
         }
 
+        public Vector3 MyPosition { get => _transform.position; }
+
         [SerializeField] private uint _startHP;
         public uint HP { get => _currentHP; }
         [SerializeField] private uint _currentHP;
-    
+
+        private Transform _transform;
         private void Awake()
         {
             _currentHP = _startHP;
             _spriteRenderer = GetComponent<SpriteRenderer>();
+            _transform = transform;
         }
 
         public bool IsDestroy { get => _currentHP == 0; }
