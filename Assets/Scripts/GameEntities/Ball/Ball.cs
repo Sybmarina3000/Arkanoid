@@ -93,6 +93,9 @@ namespace GameEntities.Ball
             if( obj.CompareTag( _floorTag))
             {
                 Debug.Log(" DESTROY BALL");
+                Speed = 0;
+                Direction = Vector3.zero;
+                
                 _ballManager.DestroyBall(this);
                 return;
             }

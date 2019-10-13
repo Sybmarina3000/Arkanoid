@@ -21,7 +21,7 @@ namespace GameEntities.Ball
         private List<PassiveMoveBehavior> Balls;
         
         private IPlayer _player;
-
+        private IGameLogic _gameLogic;
         [SerializeField] private float startSpeed;
 
         private void Start()
@@ -34,14 +34,15 @@ namespace GameEntities.Ball
         {
             _ballPool.DestroyObject(ball);
             Balls.Remove(ball);
+         Invoke(   nameof( CreateNewBall), 2f);
         }
 
         public void CreateNewBall()
         {
             var ball = _ballPool.CreateObject(Vector3.zero);
             
-            ball.MyTransform.parent = _player.MyTransform;
             ball.MyTransform.position = _player.MyTransform.position + new Vector3(0, 0.3f, 0);
+            ball.MyTransform.parent = _player.MyTransform;
             Balls.Add(ball);
         }
 
@@ -52,7 +53,7 @@ namespace GameEntities.Ball
                 if (Math.Abs(ball.Speed) < 0.1f)
                 {
                     ball.Speed = startSpeed;
-                    ball.Direction = new Vector3( Random.Range( -0.5f, 0.5f), 1 , 0 );
+                    ball.Direction = new Vector3( Random.Range( -0.5f, 0.5f), 1 , 0 ).normalized;
                     ball.MyTransform.parent = null;
                     return;
                 }
