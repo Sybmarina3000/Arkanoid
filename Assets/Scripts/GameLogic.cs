@@ -28,7 +28,7 @@ public class GameLogic : MonoBehaviour, IGameLogic
     private void Start()
     {
         _ballManager = RealizationBox.Instance.BallManager;
-        Reload();
+      
     }
 
     public void AnalyzeGameEvent(GameEvents currentEvent)

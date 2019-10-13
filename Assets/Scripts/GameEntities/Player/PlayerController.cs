@@ -9,8 +9,8 @@ namespace GameEntities.Player
     {
         private IPlayer _player;
         private IBallManager _ballManager;
-        
-        private void Awake()
+
+        public override void CustomStart()
         {
             _player = RealizationBox.Instance.Player;
             _ballManager = RealizationBox.Instance.BallManager;

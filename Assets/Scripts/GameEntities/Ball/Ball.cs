@@ -53,6 +53,9 @@ namespace GameEntities.Ball
 
         private bool CalculateCollision()
         {
+            Debug.DrawRay( _myTransform.position + _collisionPoints[0], Direction, Color.green);
+            Debug.DrawRay( _myTransform.position + _collisionPoints[1], Direction, Color.yellow);
+            Debug.DrawRay(_myTransform.position + _collisionPoints[2], Direction, Color.blue);
             for (int i = 0; i < _collisionPoints.Length; i++)
             {
                 _hitInfo = Physics2D.Raycast(_myTransform.position + _collisionPoints[i], Direction, _size + _currentSpeed.magnitude * Time.deltaTime);
@@ -72,6 +75,12 @@ namespace GameEntities.Ball
             var lastDirection = Direction;
             Direction = (Vector2)lastDirection - 2 * Vector2.Dot(lastDirection, normal) * normal ; // reflection last direction 
         
+            _sizeCorrectorComponent = _size * Direction.normalized;
+            UpdateCollisionPoints();
+        }
+
+        protected override void AfterChangeDirection()
+        {
             _sizeCorrectorComponent = _size * Direction.normalized;
             UpdateCollisionPoints();
         }

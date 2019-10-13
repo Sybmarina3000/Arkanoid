@@ -16,6 +16,7 @@ namespace GameEntities.IBehaviour.PassiveMove
             {
                 _speed = value;
                 UpdateCurrentSpeed();
+                AfterChangeSpeed();
             }
         }
         
@@ -28,6 +29,7 @@ namespace GameEntities.IBehaviour.PassiveMove
             {
                 _direction = value;
                 UpdateCurrentSpeed();
+                AfterChangeDirection();
             }
         }
 
@@ -59,6 +61,16 @@ namespace GameEntities.IBehaviour.PassiveMove
         private void UpdateCurrentSpeed()
         {
             _currentSpeed = Speed * Direction;
+        }
+
+        protected virtual void AfterChangeDirection()
+        {
+            
+        }
+        
+        protected virtual void AfterChangeSpeed()
+        {
+            
         }
     }
 }
