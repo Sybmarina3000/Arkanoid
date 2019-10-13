@@ -39,5 +39,11 @@ namespace GameEntities.Brick
         {
             _spriteRenderer.color = newColor;
         }
+
+        public void Reload()
+        {
+            _currentHP = _startHP;
+        }
+
     }
 }

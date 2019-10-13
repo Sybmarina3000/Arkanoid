@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using GameEntities.Ball;
+using GameEntities.IBehaviour;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -25,6 +26,7 @@ public class GameLogic : MonoBehaviour, IGameLogic
     [SerializeField] private Scene _NextScene;
 
     private IBallManager _ballManager;
+    private IManagerForDestroyable _brickmanager;
 
     [SerializeField] private UnityEvent _EndGame;
     [SerializeField] private UnityEvent _WinGame;
@@ -32,7 +34,8 @@ public class GameLogic : MonoBehaviour, IGameLogic
     private void Start()
     {
         _ballManager = RealizationBox.Instance.BallManager;
-      
+        _brickmanager = RealizationBox.Instance.ManagerForDestroyable;
+
     }
 
     public void AnalyzeGameEvent(GameEvents currentEvent)
@@ -46,7 +49,6 @@ public class GameLogic : MonoBehaviour, IGameLogic
             }
             case GameEvents.DropBall:
             {
-                //Check count Ball;
                 EndGame();
                 break;
             }
@@ -57,11 +59,13 @@ public class GameLogic : MonoBehaviour, IGameLogic
     public void Reload()
     {
         _ballManager.CreateNewBall();
+        _brickmanager.Reload();
     }
 
     public void WinGame()
     {
-        Debug.Log("Win Game!!!");
+        Debug.Log("Win GAME");
+        _ballManager.FinishGame();
         _WinGame.Invoke();
     }
 

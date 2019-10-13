@@ -12,6 +12,8 @@ namespace GameEntities.IBehaviour
         void Destroy();
         void VisualUpdate(Color newColor);
 
+        void Reload();
+
 
     }
 }

@@ -40,8 +40,8 @@ namespace GameEntities.Brick
          if (brick.IsDestroy)
          {
             _currentCount--;
-            if(_currentCount == 0) 
-               _gameLogic.AnalyzeGameEvent( GameEvents.DestroyAllBricks);
+            if (_currentCount == 0)
+               FullDestroy();
          }
          else
             VisualUpdateObj( brick);
@@ -54,7 +54,20 @@ namespace GameEntities.Brick
 
       public void FullDestroy()
       {
-         throw new NotImplementedException();
+         _gameLogic.AnalyzeGameEvent( GameEvents.DestroyAllBricks);
+      }
+
+      public void Reload()
+      {
+         foreach (var gameObj in _bricks.Keys)
+         {
+            gameObj.SetActive(true);
+            var brick = _bricks[gameObj];
+            
+            brick.Reload();
+            VisualUpdateObj( brick );
+         }
+         _currentCount = _bricks.Count;
       }
    }
 }

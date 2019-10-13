@@ -6,6 +6,6 @@ namespace GameEntities.IBehaviour
     {
         void DestroyObject(GameObject destroyObj, uint damage);
         void VisualUpdateObj(IDestroyable destroyObj);
-        void FullDestroy();
+        void Reload();
     }
 }

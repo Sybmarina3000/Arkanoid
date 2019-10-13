@@ -13,6 +13,7 @@ namespace GameEntities.Ball
         void DestroyBall( PassiveMoveBehavior ball);
         void CreateNewBall();
         void RunBall();
+        void FinishGame();
     }
     
     public class BallManager : MonoBehaviour, IBallManager
@@ -61,6 +62,14 @@ namespace GameEntities.Ball
                     ball.MyTransform.parent = null;
                     return;
                 }
+            }
+        }
+
+        public void FinishGame()
+        {
+            foreach (var item in Balls)
+            {
+                item.Speed = 0;
             }
         }
     }
