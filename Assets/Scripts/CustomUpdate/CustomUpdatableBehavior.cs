@@ -7,6 +7,11 @@ public class CustomUpdatableBehavior : MonoBehaviour, IUpdatable
     private void Start()
     {
         EnableUpdate();
+        CustomStart();
+    }
+
+    public virtual void CustomStart()
+    {
     }
 
     private void OnDestroy()

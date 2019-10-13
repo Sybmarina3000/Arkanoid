@@ -22,7 +22,12 @@
           </e>
           <e p="GameEntity" t="Include">
             <e p="Ball.cs" t="Include" />
+            <e p="Brick.cs" t="Include" />
+            <e p="BrickManager.cs" t="Include" />
+            <e p="IAttacking.cs" t="Include" />
+            <e p="IDestroyable.cs" t="Include" />
           </e>
+          <e p="IManagerForDestroyable.cs" t="Include" />
           <e p="PassiveMove" t="Include">
             <e p="IPassiveMover.cs" t="Include" />
             <e p="PassiveMoveBehavior.cs" t="Include" />

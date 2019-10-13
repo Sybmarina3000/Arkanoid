@@ -36,10 +36,10 @@ namespace DefaultNamespace
             UpdateCurrentSpeed();
             _myTransform = transform;
 
-            Init();
+            CustomAwake();
         }
 
-        public virtual void Init()
+        public virtual void CustomAwake()
         {
         } 
 

@@ -73,6 +73,11 @@
     <Compile Include="Assets\Scripts\CustomUpdate\CustomUpdater.cs" />
     <Compile Include="Assets\Scripts\CustomUpdate\IUpdatable.cs" />
     <Compile Include="Assets\Scripts\GameEntity\Ball.cs" />
+    <Compile Include="Assets\Scripts\GameEntity\Brick.cs" />
+    <Compile Include="Assets\Scripts\GameEntity\BrickManager.cs" />
+    <Compile Include="Assets\Scripts\GameEntity\IAttacking.cs" />
+    <Compile Include="Assets\Scripts\GameEntity\IDestroyable.cs" />
+    <Compile Include="Assets\Scripts\IManagerForDestroyable.cs" />
     <Compile Include="Assets\Scripts\PassiveMove\IPassiveMover.cs" />
     <Compile Include="Assets\Scripts\PassiveMove\PassiveMoveBehavior.cs" />
     <Compile Include="Assets\Scripts\Player\IPlayer.cs" />
