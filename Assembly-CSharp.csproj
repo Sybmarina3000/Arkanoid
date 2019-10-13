@@ -73,7 +73,6 @@
     <Compile Include="Assets\Scripts\CustomUpdate\IUpdatable.cs" />
     <Compile Include="Assets\Scripts\GameEntities\Ball\Ball.cs" />
     <Compile Include="Assets\Scripts\GameEntities\Ball\BallManager.cs" />
-    <Compile Include="Assets\Scripts\GameEntities\Ball\PassiveMoveObjPool.cs" />
     <Compile Include="Assets\Scripts\GameEntities\Bonus\Bonus.cs" />
     <Compile Include="Assets\Scripts\GameEntities\Bonus\BonusManager.cs" />
     <Compile Include="Assets\Scripts\GameEntities\Bonus\BonusPool.cs" />
@@ -88,6 +87,7 @@
     <Compile Include="Assets\Scripts\GameEntities\IBehaviour\PassiveMove\CollidePassiveMover.cs" />
     <Compile Include="Assets\Scripts\GameEntities\IBehaviour\PassiveMove\IPassiveMover.cs" />
     <Compile Include="Assets\Scripts\GameEntities\IBehaviour\PassiveMove\PassiveMoveBehavior.cs" />
+    <Compile Include="Assets\Scripts\GameEntities\IBehaviour\PassiveMove\PassiveMoveObjPool.cs" />
     <Compile Include="Assets\Scripts\GameEntities\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\GameEntities\Player\Racket.cs" />
     <Compile Include="Assets\Scripts\GameLogic.cs" />

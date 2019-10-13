@@ -1670,7 +1670,7 @@ MonoBehaviour:
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 1, g: 1, b: 1, a: 1}
-  _Probability: 1
+  _Probability: 0.5
   _DeltaSize: 0.4
   _DeltaSpeed: 1
 --- !u!4 &645146072
@@ -2634,12 +2634,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1289203215}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10550b957d89a2a4fbca19ddb3e6e987, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f3afedb621a94849a4a7e5a2433b596, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _Prefab: {fileID: 4378604818938871985, guid: c3857848d6352fe44998e5cf57a1a568, type: 3}
   _InitialInitialization: 1
-  _CountObject: 2
+  _CountObject: 3
 --- !u!114 &1289203217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3994,16 +3994,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerController
       objectReference: {fileID: 0}
-    - target: {fileID: 4302275265482113637, guid: 0ddb95f6a90cce742b5a31a92761d177,
-        type: 3}
-      propertyPath: _LeftLimiter
-      value: 
-      objectReference: {fileID: 905567186}
-    - target: {fileID: 4302275265482113637, guid: 0ddb95f6a90cce742b5a31a92761d177,
-        type: 3}
-      propertyPath: _RightLimiter
-      value: 
-      objectReference: {fileID: 757083286}
     - target: {fileID: 4302275266280261651, guid: 0ddb95f6a90cce742b5a31a92761d177,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4059,6 +4049,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4302275265482113637, guid: 0ddb95f6a90cce742b5a31a92761d177,
+        type: 3}
+      propertyPath: _LeftLimiter
+      value: 
+      objectReference: {fileID: 905567186}
+    - target: {fileID: 4302275265482113637, guid: 0ddb95f6a90cce742b5a31a92761d177,
+        type: 3}
+      propertyPath: _RightLimiter
+      value: 
+      objectReference: {fileID: 757083286}
     - target: {fileID: 4302275265482113627, guid: 0ddb95f6a90cce742b5a31a92761d177,
         type: 3}
       propertyPath: m_LocalPosition.y

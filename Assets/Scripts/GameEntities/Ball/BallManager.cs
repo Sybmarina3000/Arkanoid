@@ -20,7 +20,7 @@ namespace GameEntities.Ball
     
     public class BallManager : MonoBehaviour, IBallManager
     {
-        [FormerlySerializedAs("_ballPool")] [SerializeField] private PassiveMoveObjPool passiveMoveObjPool;
+        [SerializeField] private PassiveMoveObjPool passiveMoveObjPool;
         private List<PassiveMoveBehavior> Balls;
         
         private IPlayer _player;
