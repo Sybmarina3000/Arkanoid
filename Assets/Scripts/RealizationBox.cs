@@ -7,10 +7,10 @@ namespace DefaultNamespace
     public class RealizationBox : Singleton<RealizationBox>
     {
         [SerializeField] private Racket _Player;
-        [FormerlySerializedAs("customUpdater")] [SerializeField] private CustomUpdater _CustomUpdater;
         [SerializeField] private BrickManager _BrickManager;
+        [SerializeField] private BrickBrush _BrickBrush;
         public IPlayer Player => _Player;
-        public IUpdating CustomUpdater => _CustomUpdater;
         public IManagerForDestroyable ManagerForDestroyable => _BrickManager;
+        public IBrush BrickBrush => _BrickBrush;
     }
 }
