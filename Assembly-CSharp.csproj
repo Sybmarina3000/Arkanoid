@@ -68,23 +68,23 @@
   <ItemGroup>
     <Compile Include="Assets\Helper\Patterns\ObjectPool.cs" />
     <Compile Include="Assets\Helper\Patterns\Singleton.cs" />
-    <Compile Include="Assets\Scripts\Ball\Ball.cs" />
-    <Compile Include="Assets\Scripts\Ball\IAttacking.cs" />
-    <Compile Include="Assets\Scripts\BallLauncher.cs" />
-    <Compile Include="Assets\Scripts\Brick\Brick.cs" />
-    <Compile Include="Assets\Scripts\Brick\BrickBrush.cs" />
-    <Compile Include="Assets\Scripts\Brick\BrickManager.cs" />
-    <Compile Include="Assets\Scripts\Brick\IDestroyable.cs" />
-    <Compile Include="Assets\Scripts\Brick\IManagerForDestroyable.cs" />
     <Compile Include="Assets\Scripts\CustomUpdate\CustomUpdatableBehavior.cs" />
     <Compile Include="Assets\Scripts\CustomUpdate\CustomUpdater.cs" />
     <Compile Include="Assets\Scripts\CustomUpdate\IUpdatable.cs" />
+    <Compile Include="Assets\Scripts\GameEntities\Ball\Ball.cs" />
+    <Compile Include="Assets\Scripts\GameEntities\Ball\BallLauncher.cs" />
+    <Compile Include="Assets\Scripts\GameEntities\Brick\Brick.cs" />
+    <Compile Include="Assets\Scripts\GameEntities\Brick\BrickBrush.cs" />
+    <Compile Include="Assets\Scripts\GameEntities\Brick\BrickManager.cs" />
+    <Compile Include="Assets\Scripts\GameEntities\IBehaviour\IAttacking.cs" />
+    <Compile Include="Assets\Scripts\GameEntities\IBehaviour\IDestroyable.cs" />
+    <Compile Include="Assets\Scripts\GameEntities\IBehaviour\IManagerForDestroyable.cs" />
+    <Compile Include="Assets\Scripts\GameEntities\IBehaviour\IPlayer.cs" />
+    <Compile Include="Assets\Scripts\GameEntities\IBehaviour\PassiveMove\IPassiveMover.cs" />
+    <Compile Include="Assets\Scripts\GameEntities\IBehaviour\PassiveMove\PassiveMoveBehavior.cs" />
+    <Compile Include="Assets\Scripts\GameEntities\Player\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\GameEntities\Player\Racket.cs" />
     <Compile Include="Assets\Scripts\GridCreator\GridCreator.cs" />
-    <Compile Include="Assets\Scripts\PassiveMove\IPassiveMover.cs" />
-    <Compile Include="Assets\Scripts\PassiveMove\PassiveMoveBehavior.cs" />
-    <Compile Include="Assets\Scripts\Player\IPlayer.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\Player\Racket.cs" />
     <Compile Include="Assets\Scripts\RealizationBox.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/Users/sybma/Documents/GameProjects/Arkaniod/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>

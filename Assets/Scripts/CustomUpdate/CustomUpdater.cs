@@ -1,26 +1,27 @@
 ﻿using System.Collections.Generic;
-using DefaultNamespace;
 using Helper.Patterns;
 
-    
-public class CustomUpdater : Singleton<CustomUpdater>, IUpdating
+namespace CustomUpdate
 {
-    List<IUpdatable> _updatableObjects = new List<IUpdatable>();
-    private void Update()
+    public class CustomUpdater : Singleton<CustomUpdater>, IUpdating
     {
-        for (int i = 0; i < _updatableObjects.Count; i++)
+        List<IUpdatable> _updatableObjects = new List<IUpdatable>();
+        private void Update()
         {
-            _updatableObjects[i].UpdateMe();
+            for (int i = 0; i < _updatableObjects.Count; i++)
+            {
+                _updatableObjects[i].UpdateMe();
+            }
         }
-    }
 
-    public void AddUpdatableItem(IUpdatable item)
-    {
-       _updatableObjects.Add(item);
-    }
+        public void AddUpdatableItem(IUpdatable item)
+        {
+            _updatableObjects.Add(item);
+        }
 
-    public void RemoveUpdateItem(IUpdatable item)
-    {
-        _updatableObjects.Remove(item);
+        public void RemoveUpdateItem(IUpdatable item)
+        {
+            _updatableObjects.Remove(item);
+        }
     }
 }

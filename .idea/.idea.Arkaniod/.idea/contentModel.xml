@@ -15,19 +15,6 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
-          <e p="Ball" t="Include">
-            <e p="Ball.cs" t="Include" />
-            <e p="IAttacking.cs" t="Include" />
-          </e>
-          <e p="BallLauncher.cs" t="Include" />
-          <e p="Brick" t="Include">
-            <e p="Brick.cs" t="Include" />
-            <e p="BrickBrush.cs" t="Include" />
-            <e p="BrickManager.cs" t="Include" />
-            <e p="BricksCreator.cs" t="Include" />
-            <e p="IDestroyable.cs" t="Include" />
-            <e p="IManagerForDestroyable.cs" t="Include" />
-          </e>
           <e p="CustomUpdate" t="Include">
             <e p="CustomUpdatableBehavior.cs" t="Include" />
             <e p="CustomUpdater.cs" t="Include" />
@@ -36,17 +23,33 @@
           <e p="Editor" t="Include">
             <e p="GridManagerEditor.cs" t="Include" />
           </e>
+          <e p="GameEntities" t="Include">
+            <e p="Ball" t="Include">
+              <e p="Ball.cs" t="Include" />
+              <e p="BallLauncher.cs" t="Include" />
+            </e>
+            <e p="Brick" t="Include">
+              <e p="Brick.cs" t="Include" />
+              <e p="BrickBrush.cs" t="Include" />
+              <e p="BrickManager.cs" t="Include" />
+            </e>
+            <e p="IBehaviour" t="Include">
+              <e p="IAttacking.cs" t="Include" />
+              <e p="IDestroyable.cs" t="Include" />
+              <e p="IManagerForDestroyable.cs" t="Include" />
+              <e p="IPlayer.cs" t="Include" />
+              <e p="PassiveMove" t="Include">
+                <e p="IPassiveMover.cs" t="Include" />
+                <e p="PassiveMoveBehavior.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Player" t="Include">
+              <e p="PlayerController.cs" t="Include" />
+              <e p="Racket.cs" t="Include" />
+            </e>
+          </e>
           <e p="GridCreator" t="Include">
             <e p="GridCreator.cs" t="Include" />
-          </e>
-          <e p="PassiveMove" t="Include">
-            <e p="IPassiveMover.cs" t="Include" />
-            <e p="PassiveMoveBehavior.cs" t="Include" />
-          </e>
-          <e p="Player" t="Include">
-            <e p="IPlayer.cs" t="Include" />
-            <e p="PlayerController.cs" t="Include" />
-            <e p="Racket.cs" t="Include" />
           </e>
           <e p="RealizationBox.cs" t="Include" />
         </e>

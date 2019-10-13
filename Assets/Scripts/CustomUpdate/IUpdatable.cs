@@ -1,6 +1,4 @@
-﻿using UnityEngine.Experimental.PlayerLoop;
-
-namespace DefaultNamespace
+﻿namespace CustomUpdate
 {
     public interface IUpdating
     {

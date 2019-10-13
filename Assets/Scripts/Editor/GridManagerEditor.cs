@@ -1,19 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using GridCreator;
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof(GridCreator.GridCreator))]
-public class GridManagerEditor : Editor{
-    // Start is called before the first frame update
-
-    public override void OnInspectorGUI()
-    {
-        base.OnInspectorGUI();
-        if (GUILayout.Button("Generate map (in Edit Mode)"))
+namespace Editor
+{
+    [CustomEditor(typeof(GridCreator.GridCreator))]
+    public class GridManagerEditor : UnityEditor.Editor{
+        // Start is called before the first frame update
+        public override void OnInspectorGUI()
         {
-            ((GridCreator.GridCreator) target).BuildGrid();
+            base.OnInspectorGUI();
+            if (GUILayout.Button("Generate grid(in Edit Mode)"))
+            {
+                ((GridCreator.GridCreator) target).BuildGrid();
+            }
         }
     }
 }
