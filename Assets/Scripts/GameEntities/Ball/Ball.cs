@@ -2,10 +2,17 @@
 using GameEntities.IBehaviour.PassiveMove;
 using UnityEngine;
 
+public interface IBall : IAttacking, IPassiveMover
+{
+    Transform MyTransform { get; }
+}  
+
 namespace GameEntities.Ball
 {
-    public class Ball : PassiveMoveBehavior, IAttacking
+    public class Ball : PassiveMoveBehavior, IBall
     {
+        
+        public Transform MyTransform { get => _myTransform; }
         // collision
         private RaycastHit2D _hitInfo;
         private Vector3 _collisionPoint;
@@ -85,5 +92,6 @@ namespace GameEntities.Ball
             if(obj.CompareTag(_attackTag))
                 _destroyManager.DestroyObject(obj, AttackValue);
         }
+
     }
 }

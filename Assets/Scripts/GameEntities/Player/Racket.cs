@@ -6,6 +6,11 @@ namespace GameEntities.Player
     public class Racket : MonoBehaviour, IPlayer
     {
         [SerializeField] private float _speed;
+        public Transform MyTransform
+        {
+            get => _myTransform;
+        }
+
         public float Speed
         {
             get { return _speed; }

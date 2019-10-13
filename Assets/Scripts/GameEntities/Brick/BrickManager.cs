@@ -11,10 +11,12 @@ namespace GameEntities.Brick
       private int _currentCount;
 
       private IBrush _brush;
-
+      private IGameLogic _gameLogic;
+      
       private void Start()
       {
          _brush = RealizationBox.Instance.BrickBrush;
+         _gameLogic =  RealizationBox.Instance.GameLogic;
          InitializationBricks();
       }
 
@@ -36,7 +38,11 @@ namespace GameEntities.Brick
          IDestroyable brick = _bricks[destroyObj];
          brick.Damage( damage);
          if (brick.IsDestroy)
+         {
             _currentCount--;
+            if(_currentCount == 0) 
+               _gameLogic.AnalyzeGameEvent( GameEvents.DestroyAllBricks);
+         }
          else
             VisualUpdateObj( brick);
       }

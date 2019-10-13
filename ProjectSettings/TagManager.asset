@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Destroyable
+  - Floor
   layers:
   - Default
   - TransparentFX

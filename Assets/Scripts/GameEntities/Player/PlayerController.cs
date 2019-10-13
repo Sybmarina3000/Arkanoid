@@ -1,4 +1,5 @@
 ﻿using CustomUpdate;
+using GameEntities.Ball;
 using GameEntities.IBehaviour;
 using UnityEngine;
 
@@ -7,10 +8,12 @@ namespace GameEntities.Player
     public class PlayerController : CustomUpdatableBehavior, IUpdatable
     {
         private IPlayer _player;
-
+        private IBallManager _ballManager;
+        
         private void Awake()
         {
             _player = RealizationBox.Instance.Player;
+            _ballManager = RealizationBox.Instance.BallManager;
         }
 
         void IUpdatable.UpdateMe()
@@ -25,6 +28,12 @@ namespace GameEntities.Player
                 _player.MoveRight();
                 return;
             }
+            if (Input.GetKey(KeyCode.Space))
+            {
+                _ballManager.RunBall();
+                return;
+            }
+            
         }
     }
 }

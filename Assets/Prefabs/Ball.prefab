@@ -92,5 +92,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e26d41f5af8eff4289e7263635426b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 3
+  _speed: 0
   _direction: {x: 1, y: 0.3, z: 0}
+  <AttackValue>k__BackingField: 1

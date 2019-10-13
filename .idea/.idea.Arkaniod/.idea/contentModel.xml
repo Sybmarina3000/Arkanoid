@@ -26,7 +26,8 @@
           <e p="GameEntities" t="Include">
             <e p="Ball" t="Include">
               <e p="Ball.cs" t="Include" />
-              <e p="BallLauncher.cs" t="Include" />
+              <e p="BallManager.cs" t="Include" />
+              <e p="BallPool.cs" t="Include" />
             </e>
             <e p="Brick" t="Include">
               <e p="Brick.cs" t="Include" />
@@ -35,6 +36,7 @@
             </e>
             <e p="IBehaviour" t="Include">
               <e p="IAttacking.cs" t="Include" />
+              <e p="ICalculateCollision.cs" t="Include" />
               <e p="IDestroyable.cs" t="Include" />
               <e p="IManagerForDestroyable.cs" t="Include" />
               <e p="IPlayer.cs" t="Include" />
@@ -48,6 +50,7 @@
               <e p="Racket.cs" t="Include" />
             </e>
           </e>
+          <e p="GameLogic.cs" t="Include" />
           <e p="GridCreator" t="Include">
             <e p="GridCreator.cs" t="Include" />
           </e>

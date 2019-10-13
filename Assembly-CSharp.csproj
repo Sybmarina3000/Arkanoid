@@ -72,11 +72,13 @@
     <Compile Include="Assets\Scripts\CustomUpdate\CustomUpdater.cs" />
     <Compile Include="Assets\Scripts\CustomUpdate\IUpdatable.cs" />
     <Compile Include="Assets\Scripts\GameEntities\Ball\Ball.cs" />
-    <Compile Include="Assets\Scripts\GameEntities\Ball\BallLauncher.cs" />
+    <Compile Include="Assets\Scripts\GameEntities\Ball\BallManager.cs" />
+    <Compile Include="Assets\Scripts\GameEntities\Ball\BallPool.cs" />
     <Compile Include="Assets\Scripts\GameEntities\Brick\Brick.cs" />
     <Compile Include="Assets\Scripts\GameEntities\Brick\BrickBrush.cs" />
     <Compile Include="Assets\Scripts\GameEntities\Brick\BrickManager.cs" />
     <Compile Include="Assets\Scripts\GameEntities\IBehaviour\IAttacking.cs" />
+    <Compile Include="Assets\Scripts\GameEntities\IBehaviour\ICalculateCollision.cs" />
     <Compile Include="Assets\Scripts\GameEntities\IBehaviour\IDestroyable.cs" />
     <Compile Include="Assets\Scripts\GameEntities\IBehaviour\IManagerForDestroyable.cs" />
     <Compile Include="Assets\Scripts\GameEntities\IBehaviour\IPlayer.cs" />
@@ -84,6 +86,7 @@
     <Compile Include="Assets\Scripts\GameEntities\IBehaviour\PassiveMove\PassiveMoveBehavior.cs" />
     <Compile Include="Assets\Scripts\GameEntities\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\GameEntities\Player\Racket.cs" />
+    <Compile Include="Assets\Scripts\GameLogic.cs" />
     <Compile Include="Assets\Scripts\GridCreator\GridCreator.cs" />
     <Compile Include="Assets\Scripts\RealizationBox.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
