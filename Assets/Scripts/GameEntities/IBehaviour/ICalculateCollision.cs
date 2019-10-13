@@ -5,5 +5,6 @@ using UnityEngine;
 public interface ICalculateCollision
 {
     void CalculateCollision();
+    
   
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Helper.Patterns;
+using UnityEngine;
 
 namespace CustomUpdate
 {
@@ -16,7 +17,9 @@ namespace CustomUpdate
 
         public void AddUpdatableItem(IUpdatable item)
         {
-            _updatableObjects.Add(item);
+            if( !_updatableObjects.Contains( item))
+                _updatableObjects.Add(item);
+                
         }
 
         public void RemoveUpdateItem(IUpdatable item)

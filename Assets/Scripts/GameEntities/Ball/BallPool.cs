@@ -1,8 +1,9 @@
-﻿using Helper.Patterns;
+﻿using GameEntities.IBehaviour.PassiveMove;
+using Helper.Patterns;
 
 namespace GameEntities.Ball
 {
-    public class BallPool : ObjectPool<IBall>
+    public class BallPool : ObjectPool<PassiveMoveBehavior>
     {
     }
 }

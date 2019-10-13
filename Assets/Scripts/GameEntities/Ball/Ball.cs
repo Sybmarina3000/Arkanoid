@@ -2,17 +2,10 @@
 using GameEntities.IBehaviour.PassiveMove;
 using UnityEngine;
 
-public interface IBall : IAttacking, IPassiveMover
-{
-    Transform MyTransform { get; }
-}  
-
 namespace GameEntities.Ball
 {
-    public class Ball : PassiveMoveBehavior, IBall
+    public class Ball : PassiveMoveBehavior, IAttacking
     {
-        
-        public Transform MyTransform { get => _myTransform; }
         // collision
         private RaycastHit2D _hitInfo;
         private Vector3 _collisionPoint;
@@ -25,9 +18,12 @@ namespace GameEntities.Ball
         // attack
         [field: SerializeField]
         public uint AttackValue { get; set; }
-        private string _attackTag = "Destroyable";
+        private readonly string _attackTag = "Destroyable";
+        private readonly string _floorTag = "Floor";
+        
         private IManagerForDestroyable _destroyManager;
-    
+        private IBallManager _ballManager;
+        
         public override void CustomAwake()
         {
             _size = GetComponent<SpriteRenderer>().bounds.size.x / 2;
@@ -40,6 +36,7 @@ namespace GameEntities.Ball
         public override void CustomStart()
         {
             _destroyManager =  RealizationBox.Instance.ManagerForDestroyable;
+            _ballManager =  RealizationBox.Instance.BallManager;
         }
 
         public override void Move()
@@ -63,7 +60,7 @@ namespace GameEntities.Ball
                 if (_hitInfo.collider !=null)
                 {
                     _collisionPoint = _hitInfo.point - (Vector2)_collisionPoints[i];
-                    Attack(_hitInfo.collider.gameObject);
+                    AnalyzeCollisionByTag(_hitInfo.collider.gameObject);
                     return true;
                 } 
             }
@@ -85,12 +82,25 @@ namespace GameEntities.Ball
             _collisionPoints[1] = normal* _size;
             _collisionPoints[2] = normal * -_size;
         }
-    
 
+        private void AnalyzeCollisionByTag( GameObject obj)
+        {
+            if( obj.CompareTag( _attackTag))
+            {
+                Attack(_hitInfo.collider.gameObject);
+                return;
+            }   
+            if( obj.CompareTag( _floorTag))
+            {
+                Debug.Log(" DESTROY BALL");
+                _ballManager.DestroyBall(this);
+                return;
+            }
+        }
+        
         public void Attack(GameObject obj)
         {
-            if(obj.CompareTag(_attackTag))
-                _destroyManager.DestroyObject(obj, AttackValue);
+            _destroyManager.DestroyObject(obj, AttackValue);
         }
 
     }

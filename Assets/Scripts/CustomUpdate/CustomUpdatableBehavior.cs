@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace CustomUpdate
 {
@@ -9,13 +10,22 @@ namespace CustomUpdate
             EnableUpdate();
             CustomStart();
         }
-
+        
         public virtual void CustomStart()
         {
         }
-
-        private void OnDestroy()
+        
+        private void OnEnable()
         {
+            if (ReferenceEquals(CustomUpdater.Instance, null))
+                return;
+            EnableUpdate();
+        }
+
+        private void OnDisable()
+        {
+            if (ReferenceEquals(CustomUpdater.Instance, null))
+                return;
             DisableUpdate();
         }
 
@@ -26,12 +36,13 @@ namespace CustomUpdate
 
         public void DisableUpdate()
         {
-            CustomUpdater.Instance.AddUpdatableItem( this);
+            if (ReferenceEquals(CustomUpdater.Instance, null))
+                return;
+            CustomUpdater.Instance.RemoveUpdateItem( this);
         }
 
         public virtual void UpdateMe()
         {
-            Debug.Log("UDDATE UPDATABLE");
             Debug.LogError("CustomUpdatableBehavior.UpdateMe() not override");
         }
     }

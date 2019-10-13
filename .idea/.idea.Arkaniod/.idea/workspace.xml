@@ -2,30 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4238f16-db3f-49c3-ae15-4fd92634c625" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameEntities/Ball/BallManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Arkaniod/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Arkaniod/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Arkaniod/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Arkaniod/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Helper/Patterns/ObjectPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Helper/Patterns/ObjectPool.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Ball.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Ball.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUpdate/CustomUpdatableBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUpdate/CustomUpdatableBehavior.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CustomUpdate/CustomUpdater.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CustomUpdate/CustomUpdater.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameEntities/Ball/Ball.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameEntities/Ball/Ball.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameEntities/Ball/BallLauncher.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameEntities/Ball/BallLauncher.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameEntities/Ball/BallManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameEntities/Brick/BrickManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameEntities/Brick/BrickManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameEntities/IBehaviour/IPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameEntities/IBehaviour/IPlayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameEntities/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameEntities/Player/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameEntities/Player/Racket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameEntities/Player/Racket.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RealizationBox.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RealizationBox.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/lvl 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/lvl 1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ProtocolInstance.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ProtocolInstance.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/StateCache/Hierarchy/6b3183-mainStage.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/Hierarchy/6b3183-mainStage.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/assetDatabase3" beforeDir="false" afterPath="$PROJECT_DIR$/Library/assetDatabase3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/8a/8acaaecec2534c82b59da962cf287d67" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/8a/8acaaecec2534c82b59da962cf287d67" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Temp/__Backupscenes/0.backup" beforeDir="false" afterPath="$PROJECT_DIR$/Temp/__Backupscenes/0.backup" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameEntities/Ball/BallManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameEntities/Ball/BallManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameEntities/Ball/BallPool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameEntities/Ball/BallPool.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameEntities/IBehaviour/ICalculateCollision.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameEntities/IBehaviour/ICalculateCollision.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameEntities/IBehaviour/PassiveMove/IPassiveMover.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameEntities/IBehaviour/PassiveMove/IPassiveMover.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameEntities/IBehaviour/PassiveMove/PassiveMoveBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameEntities/IBehaviour/PassiveMove/PassiveMoveBehavior.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +53,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Racket.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/RealizeBox.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/IPlayer.cs" />
@@ -98,26 +83,27 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/BrickEditor/GridMapEditor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BrickEditor/GridCreator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Ball/Ball.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/CustomUpdate/CustomUpdatableBehavior.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/CustomUpdate/CustomUpdater.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CustomUpdate/IUpdatable.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Editor/GridManagerEditor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameEntities/IBehaviour/IAttacking.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameEntities/IBehaviour/IDestroyable.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameEntities/IBehaviour/IManagerForDestroyable.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameEntities/IBehaviour/PassiveMove/IPassiveMover.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameEntities/Brick/BrickManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameEntities/IBehaviour/ICalculateCollision.cs" />
-        <option value="$PROJECT_DIR$/Assets/Helper/Patterns/ObjectPool.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameEntities/IBehaviour/IPlayer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameEntities/Player/Racket.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameEntities/Ball/Ball.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameEntities/Ball/BallLauncher.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameLogic.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameEntities/Ball/BallPool.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/RealizationBox.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameEntities/Player/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameEntities/IBehaviour/ICalculateCollision.cs" />
+        <option value="$PROJECT_DIR$/Assets/Helper/Patterns/ObjectPool.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameEntities/Ball/BallPool.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameEntities/IBehaviour/PassiveMove/IPassiveMover.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameEntities/IBehaviour/PassiveMove/PassiveMoveBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameEntities/Ball/BallManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameEntities/Ball/Ball.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CustomUpdate/CustomUpdater.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CustomUpdate/CustomUpdatableBehavior.cs" />
       </list>
     </option>
   </component>
@@ -168,7 +154,7 @@
       <option name="presentableId" value="Default" />
       <updated>1570815329052</updated>
       <workItem from="1570815332267" duration="8579000" />
-      <workItem from="1570866942049" duration="53274000" />
+      <workItem from="1570866942049" duration="56711000" />
     </task>
     <servers />
   </component>

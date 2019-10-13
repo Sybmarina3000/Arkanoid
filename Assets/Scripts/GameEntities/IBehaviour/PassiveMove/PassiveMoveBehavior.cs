@@ -5,6 +5,9 @@ namespace GameEntities.IBehaviour.PassiveMove
 {
     public class PassiveMoveBehavior : CustomUpdatableBehavior, IPassiveMover
     {
+        public Transform MyTransform { get => _myTransform; }
+        public GameObject MyGameObject { get => gameObject; }
+        
         [SerializeField] private float _speed;
         public float Speed
         {

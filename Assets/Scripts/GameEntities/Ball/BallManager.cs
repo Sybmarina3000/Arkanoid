@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using GameEntities.IBehaviour;
+using GameEntities.IBehaviour.PassiveMove;
 using Helper.Patterns;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -9,7 +10,7 @@ namespace GameEntities.Ball
 {
     public interface IBallManager
     {
-        void DestroyBall( IBall ball);
+        void DestroyBall( PassiveMoveBehavior ball);
         void CreateNewBall();
 
         void RunBall();
@@ -17,7 +18,7 @@ namespace GameEntities.Ball
     public class BallManager : MonoBehaviour, IBallManager
     {
         [SerializeField] private BallPool _ballPool;
-        private List<IBall> Balls;
+        private List<PassiveMoveBehavior> Balls;
         
         private IPlayer _player;
 
@@ -25,11 +26,11 @@ namespace GameEntities.Ball
 
         private void Start()
         {
-            Balls = new List<IBall>();
+            Balls = new List<PassiveMoveBehavior>();
             _player = RealizationBox.Instance.Player;
         }
 
-        public void DestroyBall(IBall ball)
+        public void DestroyBall(PassiveMoveBehavior ball)
         {
             _ballPool.DestroyObject(ball);
             Balls.Remove(ball);
@@ -51,7 +52,7 @@ namespace GameEntities.Ball
                 if (Math.Abs(ball.Speed) < 0.1f)
                 {
                     ball.Speed = startSpeed;
-                    ball.Direction = new Vector3( Random.Range( -0.7f, 0.7f), Random.Range( -1f, 1f) , 0 );
+                    ball.Direction = new Vector3( Random.Range( -0.5f, 0.5f), 1 , 0 );
                     ball.MyTransform.parent = null;
                     return;
                 }

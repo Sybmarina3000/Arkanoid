@@ -4,14 +4,14 @@ using UnityEngine;
 
 namespace Helper.Patterns
 {
-    public class PoolContainer<T> {
+    public class PoolContainer<T> where T : MonoBehaviour {
         public T Object;
         public Transform Transform;
         public GameObject GObj;
 
         public PoolContainer(T obj, GameObject g) {
             Object = obj;
-            Transform =g.transform;
+            Transform =obj.transform;
             GObj = g;
         }
 
@@ -20,7 +20,7 @@ namespace Helper.Patterns
         }
     }
 
-    public class ObjectPool<T> : MonoBehaviour  {
+    public class ObjectPool<T> : MonoBehaviour where T : MonoBehaviour {
         [SerializeField] protected GameObject _Prefab;
         [Header("начальное заполнение пула")]
         [SerializeField] protected bool _InitialInitialization;
@@ -62,7 +62,7 @@ namespace Helper.Patterns
 
         public void DestroyObject( T obj) {
 
-            var returnContainer = _pool.FirstOrDefault(s => ReferenceEquals( s, obj));
+            var returnContainer = _pool.FirstOrDefault(s => s.Object == obj);
             if (ReferenceEquals(returnContainer, null))
                 return;
         

@@ -8,5 +8,8 @@ namespace GameEntities.IBehaviour.PassiveMove
         Vector3 Direction { get; set; }
 
         void Move();
+        
+        Transform MyTransform { get; }
+        GameObject MyGameObject { get; }
     }
 }
